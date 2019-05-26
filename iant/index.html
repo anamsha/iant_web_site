@@ -291,7 +291,7 @@
 	<!-- Scripts -->
 	<script>
 		function updatePrayerTimes() {
-			const Url = 'http://api.aladhan.com/v1/timingsByAddress?address=840%20Abrams%20Rd%20Richardson,%20TX%2075081';
+			const Url = 'https://api.aladhan.com/v1/timingsByAddress?address=840%20Abrams%20Rd%20Richardson,%20TX%2075081';
 			$.getJSON(Url, function (result) {
 				var times = result.data.timings;
 				var date = result.data.date.hijri;
