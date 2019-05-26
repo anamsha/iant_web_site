@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
-<body class="is-preload">
+<body class="is-preload" onload="updatePrayerTimes()">
 
 	<!-- Header -->
 	<header id="header" class="alt">
@@ -42,7 +42,8 @@
 					<a href="" class="submenu fa-angle-down">Join Us</a>
 					<ul>
 						<li><a href="https://iant.wildapricot.org" target="_blank">Become a Member</a></li>
-						<li><a href="https://docs.google.com/a/iantyouth.com/forms/d/1ehPyc6ruM9ffkWzBGFvHLA3blUY1w8gey9f7cewyoM0/edit?usp=drivesdk" target="_blank">Volunteer Sign Up</a></li>
+						<li><a href="https://docs.google.com/a/iantyouth.com/forms/d/1ehPyc6ruM9ffkWzBGFvHLA3blUY1w8gey9f7cewyoM0/edit?usp=drivesdk"
+								target="_blank">Volunteer Sign Up</a></li>
 					</ul>
 				</li>
 				<li><a href="contact.html">Contact</a></li>
@@ -68,13 +69,16 @@
 			<section class="spotlight">
 				<div class="content">
 					<h2>Eid Mubarak!</h2>
-					<p>Eid-Al-Fitr prayer will be held on Tuesday June 4th. </p>
+					<p>Eid-al-Fitr prayer will be held on Tuesday June 4th. Please be reminded that
+						Zakat-al-Fitr/Fitrana is $10
+						and <b><u>must</b></u> be paid <b><u>before</b></u> the prayer. Please pay this amount as soon
+						as possible so IANT can disburse these funds to those in need so they may enjoy Eid as well.</p>
 					<table class="alt">
 						<thead>
 							<tr>
 								<th></th>
-								<th></th>
-								<th>Iqama</th>
+								<th>Takbir</th>
+								<th>Prayer</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -92,7 +96,7 @@
 						</tbody>
 					</table>
 				</div>
-				<span class="image"><img src="images/main.jpg" width="60%" /></span>
+				<span class="image"><img src="images/main.jpg" width="100%" /></span>
 			</section>
 		</div>
 	</section>
@@ -101,16 +105,16 @@
 	<section id="two" class="wrapper content-pad">
 		<div class="inner">
 			<div class="features">
-					<section class="content">
-							<span class="image"><img src="images/center.jpg" width="100%" /></span>
-					</section>
+				<section class="content">
+					<span class="image"><img src="images/center.jpg" width="100%" /></span>
+				</section>
 				<section class="content">
 					<span class="icon-wrapper major"><span class="icon fa-calendar"></span></span>
 					<h3>Prayer Times</h3>
 					<table class="alt">
 						<thead>
 							<tr>
-								<th></th>
+								<th><div id="hijriDate"></div></th>
 								<th>Adhan</th>
 								<th>Iqama</th>
 							</tr>
@@ -118,27 +122,29 @@
 						<tbody>
 							<tr>
 								<td>Fajr</td>
-								<td>5:03</td>
+								<td>
+									<div id="fajrTime">Loading...</div>
+								</td>
 								<td>5:20</td>
 							</tr>
 							<tr>
 								<td>Zuhr</td>
-								<td>1:25</td>
+								<td><div id="zuhrTime">Loading...</div></td>
 								<td>1:45</td>
 							</tr>
 							<tr>
 								<td>Asr</td>
-								<td>5:07</td>
+								<td><div id="asrTime">Loading...</div></td>
 								<td>5:30</td>
 							</tr>
 							<tr>
 								<td>Maghrib</td>
-								<td>8:26</td>
+								<td><div id="maghribTime">Loading...</div></td>
 								<td>+10 mins</td>
 							</tr>
 							<tr>
 								<td>Isha</td>
-								<td>9:45</td>
+								<td><div id="ishaTime">Loading...</div></td>
 								<td>9:55</td>
 							</tr>
 						</tbody>
@@ -146,7 +152,7 @@
 							<tr>
 								<th></th>
 								<th>Khutba</th>
-								<th>Iqamah</th>
+								<th>Iqama</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -161,20 +167,20 @@
 					TCM: Sh. Abou Obeida
 				</section>
 				<section class="content">
-						<span class="icon-wrapper major"><span class="icon fa-paper-plane"></span></span>
-						<h3>Announcements</h3>
-						<ul>
-							<li>IANT Open House is on Sunday April 28th from 3:00-6:00 pm.</li>
-							<li>IANT Social Service (Sister Committee) is inviting you to attend “Senior Education Session”
-								on Monday April 22nd b/w Asr & Maghreb at Sister Praying Area.</li>
-							<li>9th IANT All DFW Inter Masajid Men’s Singles & Doubles Badminton & Table Tennis Tournament
-								is on April 20th & 21st @ IANT Multipurpose Hall.</li>
-							<li>IQA, now enrolling all grades (KG-12). Apply on line, or contact the IQA office for more
-								information.</li>
-							<li>MAS Dallas is presenting “Muslims got TALENT “Sunday April 20th.</li>
-	
-						</ul>
-					</section>
+					<span class="icon-wrapper major"><span class="icon fa-paper-plane"></span></span>
+					<h3>Announcements</h3>
+					<ul>
+						<li>IANT Open House is on Sunday April 28th from 3:00-6:00 pm.</li>
+						<li>IANT Social Service (Sister Committee) is inviting you to attend “Senior Education Session”
+							on Monday April 22nd b/w Asr & Maghreb at Sister Praying Area.</li>
+						<li>9th IANT All DFW Inter Masajid Men’s Singles & Doubles Badminton & Table Tennis Tournament
+							is on April 20th & 21st @ IANT Multipurpose Hall.</li>
+						<li>IQA, now enrolling all grades (KG-12). Apply on line, or contact the IQA office for more
+							information.</li>
+						<li>MAS Dallas is presenting “Muslims got TALENT “Sunday April 20th.</li>
+
+					</ul>
+				</section>
 			</div>
 		</div>
 	</section>
@@ -183,7 +189,7 @@
 		<div class="inner">
 			<section>
 				<h2>Send us a message</h2>
-					<form method="post" action="https://formspree.io/s_bajwa@live.com">
+				<form method="post" action="https://formspree.io/s_bajwa@live.com">
 					<div class="row gtr-uniform">
 						<div class="col-6 col-12-large col-6-medium col-12-xsmall">
 							<label for="name">Name</label>
@@ -232,7 +238,7 @@
 						<h3>Collins Musalla</h3>
 						<p><a href="https://www.google.com/maps/place/Collins+Musallah/@32.9689665,-96.7011747,17z/data=!3m1!4b1!4m5!3m4!1s0x864c1f3f48611fcf:0xb748e8605476082e!8m2!3d32.9689665!4d-96.698986?hl=en-US"
 								target="_blank">1600 Plano Rd, #200<br />
-							Richardson, TX 75081<br /></a>
+								Richardson, TX 75081<br /></a>
 						</p>
 					</li>
 					<li>
@@ -256,7 +262,8 @@
 		<div class="inner">
 			<p class="copyright">&copy; Islamic Association of North Texas.</p>
 			<ul class="menu">
-<li><a href="about-s.html">About Us</a></li>				<li><a href="contact.html"><span>Contact</span></a></li>
+				<li><a href="about-s.html">About Us</a></li>
+				<li><a href="contact.html"><span>Contact</span></a></li>
 				<li><a href="https://us.mohid.co/tx/planorgn/iant/masjid/online/donation" target="_blank">Donate</a>
 				</li>
 			</ul>
@@ -264,6 +271,35 @@
 	</footer>
 
 	<!-- Scripts -->
+	<script>
+		function updatePrayerTimes() {
+			const Url = 'http://api.aladhan.com/v1/timingsByAddress?address=840%20Abrams%20Rd%20Richardson,%20TX%2075081';
+			$.getJSON(Url, function (result) {
+				var times = result.data.timings;
+				var date = result.data.date.hijri;
+				document.getElementById('fajrTime').innerHTML = parseTo12(times['Fajr']);
+				document.getElementById('zuhrTime').innerHTML = parseTo12(times['Dhuhr']);
+				document.getElementById('asrTime').innerHTML = parseTo12(times['Asr']);
+				document.getElementById('maghribTime').innerHTML = parseTo12(times['Maghrib']);
+				document.getElementById('ishaTime').innerHTML = parseTo12(times['Isha']);
+				document.getElementById('hijriDate').innerHTML = date['day'] + ' ' + date.month['en'] + ', ' + date['year'];
+			});
+		}
+		function parseTo12(inTime)
+		{
+			var inHour = inTime.substr(0,2);
+			var inMin = inTime.substr(3,2);
+			if (inHour > 12)
+			{
+				return inHour - 12 + ':' + inMin;
+			}
+			else
+			{
+				return inHour.substr(1,1) + ':' + inMin;
+			}
+		}
+	</script>
+
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
