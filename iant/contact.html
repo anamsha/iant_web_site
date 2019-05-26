@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>Untitled</title>
+	<title>IANT - Contact</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -211,6 +211,17 @@
 	</footer>
 
 	<!-- Scripts -->
+	<script>
+		// Initialize and add the map
+		function initMap() {
+			var iant = { lat: -96.730837, lng: -32.93946 };
+			var map = new google.maps.Map(
+				document.getElementById('map'), { zoom: 4, center: iant });
+			// The marker, positioned at Uluru
+			var marker = new google.maps.Marker({ position: iant, map: map });
+		}
+	</script>
+
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>

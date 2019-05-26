@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>Untitled</title>
+	<title>IANT - Home</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -12,10 +12,9 @@
 </head>
 
 <body class="is-preload" onload="updatePrayerTimes()">
-
 	<!-- Header -->
 	<header id="header" class="alt">
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<h1><img src="images/logo.png" height="100%"></h1>
 		<nav id="nav">
 			<ul>
@@ -115,7 +114,9 @@
 					<table class="alt">
 						<thead>
 							<tr>
-								<th><div id="hijriDate"></div></th>
+								<th>
+									<div id="hijriDate"></div>
+								</th>
 								<th>Adhan</th>
 								<th>Iqama</th>
 							</tr>
@@ -130,22 +131,30 @@
 							</tr>
 							<tr>
 								<td>Zuhr</td>
-								<td><div id="zuhrTime">Loading...</div></td>
+								<td>
+									<div id="zuhrTime">Loading...</div>
+								</td>
 								<td>1:45</td>
 							</tr>
 							<tr>
 								<td>Asr</td>
-								<td><div id="asrTime">Loading...</div></td>
+								<td>
+									<div id="asrTime">Loading...</div>
+								</td>
 								<td>5:30</td>
 							</tr>
 							<tr>
 								<td>Maghrib</td>
-								<td><div id="maghribTime">Loading...</div></td>
+								<td>
+									<div id="maghribTime">Loading...</div>
+								</td>
 								<td>+10 mins</td>
 							</tr>
 							<tr>
 								<td>Isha</td>
-								<td><div id="ishaTime">Loading...</div></td>
+								<td>
+									<div id="ishaTime">Loading...</div>
+								</td>
 								<td>9:55</td>
 							</tr>
 						</tbody>
@@ -286,17 +295,14 @@
 				document.getElementById('hijriDate').innerHTML = date['day'] + ' ' + date.month['en'] + ', ' + date['year'];
 			});
 		}
-		function parseTo12(inTime)
-		{
-			var inHour = inTime.substr(0,2);
-			var inMin = inTime.substr(3,2);
-			if (inHour > 12)
-			{
+		function parseTo12(inTime) {
+			var inHour = inTime.substr(0, 2);
+			var inMin = inTime.substr(3, 2);
+			if (inHour > 12) {
 				return inHour - 12 + ':' + inMin;
 			}
-			else
-			{
-				return inHour.substr(1,1) + ':' + inMin;
+			else {
+				return inHour.substr(1, 1) + ':' + inMin;
 			}
 		}
 	</script>
